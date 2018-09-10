@@ -12,10 +12,8 @@ public abstract class Equipment implements IEquipment{
 	private String brand;
 	private String model;
 	private String sn;
-//	private String category;
-//	private String subCategory;
 	private Species species;
-	private ArrayList<String> characteristics;
+	private ArrayList<Characteristics> characteristics;
 
 	@Override
 	public String getManufacturer() {
@@ -41,26 +39,16 @@ public abstract class Equipment implements IEquipment{
 		return this.species;
 	}
 	
-	public List<String> getCharacteristics(){
+	public List<Characteristics> getCharacteristics(){
 		return this.characteristics;
 	}
-	public List<String> getAllCharacteristics(){
-		List<String> newList = Stream.of(this.getSpecies().getGenus().getCharacteristics(), 
+	public List<Characteristics> getAllCharacteristics(){
+		List<Characteristics> newList = Stream.of(this.getSpecies().getGenus().getCharacteristics(), 
 				this.getSpecies().getCharacteristics(), this.getCharacteristics())
                 .flatMap(x -> x.stream())
                 .collect(Collectors.toList());
 		return newList;
 	}
-
-//	@Override
-//	public String getCategory() {
-//		return this.category;
-//	}
-//
-//	@Override
-//	public String getSubCategory() {
-//		return this.subCategory;
-//	}
 
 	@Override
 	public void setManufacturer(String manufacture) {
@@ -87,24 +75,13 @@ public abstract class Equipment implements IEquipment{
 		this.species = (Species) species;
 	}
 	
-	public void setCharacteristics(List<String> characteristics) {
+	public void setCharacteristics(List<Characteristics> characteristics) {
 		this.characteristics = new ArrayList<>(characteristics);
 	}
 	
-	public void addCharacteristics(String characteristics) {
+	public void addCharacteristics(Characteristics characteristics) {
 		this.characteristics.add(characteristics);
 	}
-
-//	@Override
-//	public void setCategory(String category) {
-//		this.category = category;
-//	}
-//
-//	@Override
-//	public void setSubCategory(String subCategory) {
-//		this.subCategory = subCategory;
-//		
-//	}
 
 	@Override
 	public String toString() {
@@ -114,7 +91,7 @@ public abstract class Equipment implements IEquipment{
 		str += "modelo: " + this.model +"\n";
 		str += "série de fabricação: " + this.sn +"\n";
 		str += "caracteristicas: ";
-		str += String.join("\n", this.getCharacteristics()); 
+//		str += String.join("\n", Stream.of(this.getCharacteristics()).flatMap(x -> x.toString())); 
 		return str; 
 	}
 	@Override

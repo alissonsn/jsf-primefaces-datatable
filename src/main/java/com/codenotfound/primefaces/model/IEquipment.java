@@ -11,8 +11,8 @@ public interface IEquipment {
 	public String getBrand();
 	public String getModel();
 	public String getSerialNumber();
-	public List<String> getCharacteristics();
-	public List<String> getAllCharacteristics();
+	public List<Characteristics> getCharacteristics();
+	public List<Characteristics> getAllCharacteristics();
 //	public String getCategory();
 //	public String getSubCategory();
 	
@@ -23,8 +23,8 @@ public interface IEquipment {
 	public void setBrand(String brand);
 	public void setModel(String model);
 	public void setSerialNumber(String sn);
-	public void setCharacteristics(List<String> characteristics);
-	public void addCharacteristics(String characteristics);
+	public void setCharacteristics(List<Characteristics> characteristics);
+	public void addCharacteristics(Characteristics characteristics);
 //	public void setCategory(String category);
 //	public void setSubCategory(String subCategory);
 
