@@ -40,4 +40,8 @@ public class CarsView implements Serializable {
   public List<Car> getCars() {
     return cars;
   }
+  
+  public Car getCar() {
+	  return this.car;
+  }
 }
