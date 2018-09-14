@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+  <title>SigLocaInfo</title>
+</h:head>
+
+<h:body>
+	<h:div>
+		<h2>Cadastro de Categoria</h2>
+		<h:form method="post">
+			Nome da categoraia: <p:inputText value="#{genusController.genus.name}" name="name"></p:inputText>
+			Sigla da Categoria: <p:inputText value="#{genusController.genus.acronyms}" name="acronyms"></p:inputText>
+			Descrição:<p:inputTextarea rows="6" cols="33" value="{genusController.genus.description}"/>
+			<button type="submit">Salvar</button>
+			<!-- <p:commandButton value="Salvar" id="salvar" actionListener="#{buttonView.buttonAction}" update="growl" icon="ui-icon-disk" /> -->
+		</h:form>
+	</h:div>
+
+</h:body>
+</html>
